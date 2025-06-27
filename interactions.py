@@ -1,0 +1,2 @@
+def feeding(feed):
+    feed
