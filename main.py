@@ -1,10 +1,10 @@
 import pet, re, time, os, interactions
+from pet import PetClass
 
 pattern = r'^[A-Za-z]+$'
 
-
 while True:
-    nomePet=input("Digite o nome que deseja dar ao seu pet: ")
+    nomePet=(input("Digite o nome que deseja dar ao seu pet: "))
     if re.fullmatch(pattern, nomePet):
         print(f"Parabéns, seu bichinho se chama {nomePet}!")
         break
@@ -12,9 +12,9 @@ while True:
         os.system('cls')
         print("Entrada inválida. Tente novamente.")
 
+my_pet=PetClass(nomePet)
 
-myPet=pet.PetClass(nomePet)
-ShowStates=pet.PetClass.show_states(myPet)
+feed= -10
 
 
 while True:
@@ -29,14 +29,15 @@ while True:
 
     match option_menu:
         case 1:
-            print(f'Você alimentou com {nomePet}.')
+            os.system('cls')
+            interactions.feeding(my_pet)
         case 2:
             print(f'Voc<UNK> brincou com {nomePet}.')
         case 3:
             print(f'Voc<UNK> colocou {nomePet} para dormir.')
         case 4:
             print('ENTROU AQUI')
-            print(pet.PetClass.show_states(myPet))
+            print(pet.PetClass.show_states(my_pet))
         case 5:
             print('Saindo...')
             break
