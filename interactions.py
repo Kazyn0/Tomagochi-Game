@@ -1,4 +1,4 @@
-import pet
+import pet,os
 
 def feeding(my_pet):
     food_choice=input(f'Qual alimento deseja dar para {my_pet}?\n'
@@ -6,12 +6,13 @@ def feeding(my_pet):
         '[2] Petisco\n'
         '[3] Frango\n'
         '[4] Voltar para o menu principal\n')
+    os.system('cls')
     match food_choice:
         case '1':
-            pet.PetClass.feeding(20)
+            pet.PetClass.feeding_class(my_pet, 20)
         case '2':
-            pet.PetClass.feeding(5)
+            pet.PetClass.feeding_class(my_pet, 5)
         case '3':
-            pet.PetClass.feeding(10)
+            pet.PetClass.feeding_class(my_pet, 10)
         case '4':
             print('voltando...')
