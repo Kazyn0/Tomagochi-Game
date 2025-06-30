@@ -12,12 +12,20 @@ class PetClass:
         return f"Pet {self.name}"
 
     def show_states(self):
-        print(f'A felicidade do seu bichinho está em {self.happiness}.')
-        print(f'A fome do seu bichinho está em {self.hunger}.')
-        print(f'O cansaço do seu bichinho está em {self.tiredness}.')
+        print(f'A felicidade do seu bichinho está em {self.happiness}%')
+        print(f'A fome do seu bichinho está em {self.hunger}%')
+        print(f'O cansaço do seu bichinho está em {self.tiredness}%')
         print(f'O seu bichinho tem {self.age} anos.')
+        input('Aperte Enter para continuar...')
+        return
 
-    def feeding_class(self, quantidade):
-        self.hunger -= quantidade
+    def feeding_class(self, quantity_feed):
+        self.hunger -= quantity_feed
         if self.hunger < 0:
             self.hunger = 0
+        return
+    def playing_class(self, quantity_play):
+        self.happiness += quantity_play
+        if self.happiness > 100:
+            self.happiness = 0
+        return
